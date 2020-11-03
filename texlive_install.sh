@@ -63,7 +63,8 @@ tlmgr install   \
   tracklang \
   zref \
   marginnote \
-  soulpos
+  soulpos \
+  titlesec \
   
 
 # Keep no backups (not required, simply makes cache bigger)
