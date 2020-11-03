@@ -1,0 +1,13 @@
+# before_install:
+#  - sudo apt-get update
+#  - sudo apt-get -y install texlive-lang-cyrillic texlive-fonts-extra
+install:
+ - source ./texlive_install.sh
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+script:
+- mkdir _build
+# Prefix command with travis_wait x so it times out after 3 mins
+- travis_wait 3 pdflatex -output-directory _build ./LinalColloc01.tex
