@@ -61,7 +61,8 @@ tlmgr install   \
   etoolbox \
   datetime2 \
   tracklang \
-  zref
+  zref \
+  marginnote
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
