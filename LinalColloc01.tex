@@ -260,8 +260,230 @@
 % \listoftheorem-nons[ignoreall,show={conj}]
 \newpage
 \chapter{Первый семестр. Первая четверть}
-\section{Построение поля комплексных чисел}
-На сегодня хватит
+
+\section{Построение поля комплексных чисел.}
+\begin{itemize}
+  \item $\mathbb{C} = \{a + bi\,|\, a, b \in \mathbb{R} \} \quad i^2 = -1$ 
+  \item Определим операцию сложения: $(a + bi) + (a' + b'i) = (a + a') + (b + b')i$
+  \item Определеим операцию умножения: $(a + bi) \cdot (a' + b'i) = (aa' - bb') + (ab' + a'b)i$ 
+\end{itemize} 
+\begin{theorem-non}
+  $(\mathbb{C}, +, \cdot)$ - поле
+\end{theorem-non}
+\begin{proof} \quad \\
+  \begin{itemize}
+    \item коммутативность и ассоциативность сложения очевидны
+    \item $0 + 0i$ - нейтральный по сложению
+    \item $(-a) + (-b)i$ - противоположный к $a + bi$
+    \item коммутативность умножения очевидна
+    \item дистрибутивность умножения:
+    \begin{gather*}
+      (a + bi)((a_1 + b_1i) + (a_2 + b_2i)) = (a + bi)((a_1 + a_2) + (b_1 + b_2)i) = \\
+      = a(a_1 + b_1) - b(b_1 + b_2) + (a(b_1 + b_2) + b(a_1 + a_2))i \\ \\
+      (a + bi)(a_1 + b_1i) + (a + bi)(a_2 + b_2i) = (aa_1 - bb_1 + aa_2 - bb_2) + (ab_1 + a_1b + ab_2 + a_2b)i = \\
+      = a(a_1 + b_1) - b(b_1 + b_2) + (a(b_1 + b_2) + b(a_1 + a_2))i
+    \end{gather*}
+    \item ассоциативность умножения:
+    \begin{gather*}
+      (a_1 + b_1i)((a_2 + b_2i)(a_3 + b_3i)) = (a_1 + b_1i)((a_2a_3 - b_2b_3) + (a_2b_3 + a_3b_2)i) = \\
+      = a_1(a_2a_3 - b_2b_3) - b_1(a_2b_3 + a_3b_2) + (a_1(a_2b_3 + a_3b_2) + b_1(a_2a_3 - b_2b_3))i = \\
+      = a_1a_2a_3 - a_3b_1b_2 - a_1b_2b_3 - a_2b_1b_3 + (a_1a_2b_3 + a_1a_3b_2 + a_2a_3b_1 - b_1b_2b_3)i  \\ \\
+      ((a_1 + b_1i)(a_2 + b_2i))(a_3 + b_3i) = ((a_1a_2 - b_1b_2) + (a_1b_2 + a_2b_1)i)(a_3 + b_3i) = \\
+      = (a_1a_2 - b_1b_2)a_3 - (a_1b_2 + a_2b_1)b_3 + ((a_1a_2 - b_1b_2)b_3 + (a_1b_2 + a_2b_1)a_3)i = \\
+      = a_1a_2a_3 - a_3b_1b_2 - a_1b_2b_3 - a_2b_1b_3 + (a_1a_2b_3 + a_1a_3b_2 + a_2a_3b_1 - b_1b_2b_3)i
+    \end{gather*}
+    \item $(1 + 0i)$ - нейтральный элемент по умножению 
+    \item $(a + bi)^{-1} = \frac{a}{a^2 + b^2} - \frac{b}{a^2 + b^2}i$
+    \begin{gather*}
+      (a + bi)(a - bi) = a^2 - b^2i^2 = a^2 + b^2 \quad  /(a^2 + b^2) \\
+      (a + bi)(\frac{a}{a^2 + b^2} - \frac{b}{a^2 + b^2}i) = 1
+    \end{gather*}
+  \end{itemize}
+  $\Rightarrow$ все аксиомы поля выполнены $\Rightarrow \mathbb{C}$ - поле комплексных чисел 
+\end{proof}
+\begin{itemize}
+  \item $\mathbb{R}$ это подполе в $\mathbb{C}$ 
+  \item $z = x + iy,\; x, y \in \mathbb{R}$ \\
+  $x = Re\,z$ - вещественная часть \\
+  $y = Im\,z$ - мнимая часть
+  \item $z$ называется чисто мнимым, если $Re\,z = 0$
+\end{itemize}
+
+\section{Комплексное сопряжение.}
+$a - bi$ - число, комплексно сопряженное к $a + bi$
+\begin{theorem-non}
+  Отображение $\mathbb{C} \to \mathbb{C} : z = x + iy \mapsto \overline{z} = x - yi$ - автоморфизм $\mathbb{C}$, \\
+  то есть это биекция, а также $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$ и $\overline{z_1z_2} = \overline{z_1} \cdot \overline{z_2}$
+\end{theorem-non}
+\begin{proof}
+  \begin{enumerate}
+    \item $\overline{\overline{x}} = x \Rightarrow$ комплексное сопряжение - отображение, обратное к самому себе $\Rightarrow$ это биекция
+    \item  $z_1 = x_1 + iy_1,\; z_2 = x_2 + iy_2$ 
+    
+    $\overline{z_1 + z_2} = (x_1 + x_2) - (y_1 + y_2)i = (x_1 - y_1i) + (x_2 - y_2i) = \overline{z_1} + \overline{z_2}$
+    \item $\overline{z_1z_2} = (x_1x_2 - y_1y_2) - (x_1y_2 + x_2y_1)i$
+    
+    $\overline{z_1} \cdot \overline{z_2} = (x_1 - y_1i)(x_2 - y_2i) = (x_1x_2 - y_1y_2) - (x_1y_2 + x_2y_1)i$
+  \end{enumerate}
+\end{proof}
+\begin{notice}
+  \begin{enumerate}
+    \item $z = \overline{z} \Leftrightarrow z \in \mathbb{R}$
+    \item $z + \overline{z} \in \mathbb{R}$
+    \item $z \cdot \overline{z} \in \mathbb{R}$
+  \end{enumerate}
+\end{notice}
+
+\section{Определение модуля и аргумента. Свойства модуля комплексного числа.}
+\includegraphics[scale=0.75]{Complex_number_on_plane.png} 
+\begin{conj}
+  Модулем комплексного числа $z = a + bi$ называется $|z| = \sqrt{a^2 + b^2}$.
+\end{conj}
+\begin{conj}
+  Пусть $z \in \mathbb{C}$, $r = |z|$. Число $\varphi \in \mathbb{R}$ называется аргументом $z$, если 
+  \[ z = r(\cos\varphi + i\sin\varphi) \]
+\end{conj}
+\begin{conj}
+  $ z = r(\cos\varphi + i\sin\varphi)$ - тригонометрическая форма комплексного числа.
+\end{conj}
+\underline{Свойства модуля:}
+\begin{enumerate}
+  \item $|z| \geqslant 0$ и $|z| = 0 \Leftrightarrow z = 0$
+  \item $|\overline{z}| = |z|$
+  \item $|z|^2 = z \cdot \overline{z}$
+  \begin{proof}
+    $z \cdot \overline{z} = (a + bi)(a - bi) = a^2 + b^2 = |z|^2$
+  \end{proof}
+  \item $|z_1 + z_2| \leqslant |z_1| + |z_2|$
+  \begin{proof}
+    Будем сравнивать квадраты левой и правой части:
+    \begin{gather*}
+      |z_1 + z_2|^2 = |(a_1 + a_2) + (b_1 + b_2)i|^2 = (a_1 + a_2)^2 + (b_1 + b_2)^2 = a_1^2 + 2a_1a_2 + a_2^2 + b_1^2 + 2b_1b_2 + b_2^2 \\
+      (|z_1| + |z_2|)^2 = a_1^2 + b_1^2 + 2|z_1||z_2|  + a_2^2 + b_2^2 \\
+      \Longrightarrow |z_1 + z_2| \leqslant |z_1| + |z_2| \Leftrightarrow a_1a_2 + b_1b_2 \leqslant |z_1||z_2| \\
+    \end{gather*}
+    Опять возведем левую и правую часть в квадрат:
+    \begin{gather*}
+      (a_1a_2 + b_1b_2)^2 \leqslant (a_1^2 + b_1^2)(a_2^2 + b_2^2) \\
+      2a_1a_2b_1b_2 \leqslant a_1^2b_2^2 + a_2^2b_1^2 \\
+      0 \leqslant (a_1b_2 - a_2b_1)^2
+    \end{gather*}
+  \end{proof}
+  \item $|z_1z_2| = |z_1||z_2|$
+  \begin{proof}
+    Возведем левую и правую часть в квадрат:
+    \begin{gather*}
+      |z_1z_2|^2 = |(a_1a_2 - b_1b_2) + (a_1b_2 + a_2b_1)i|^2 = (a_1a_2 - b_1b_2)^2 + (a_1b_2 + a_2b_1)^2 = a_1^2a_2^2 + b_1^2b_2^2 + a_1^2b_2^2 + a_2^2b_1^2 \\
+      |z_1|^2|z_2|^2 = (a_1^2 + b_1^2)(a_2^2 + b_2^2) = a_1^2a_2^2 + b_1^2b_2^2 + a_1^2b_2^2 + a_2^2b_1^2
+    \end{gather*}
+  \end{proof}
+\end{enumerate}
+
+\section{Существование и «единственность» аргумента комплексного числа. Свойства аргумента.}
+\begin{enumerate}
+  \item Если $z = 0$, то любое число является его аргументом.
+  \item Если $z \neq 0$, то существует $\varphi_0 \in \mathbb{R}$ такое, что $\varphi_0$ - аргумент $z$, и при этом $\varphi_0 + 2\pi k$ для любого $k \in \mathbb{Z}$ тоже аргумент $z$.
+  \begin{proof} 
+    \begin{gather*}
+      x^2 \leqslant x^2 + y^2 = r^2 \Rightarrow -r \leqslant x \leqslant r \\
+      -1 \leqslant \frac{x}{r} \leqslant 1 \\
+      \Rightarrow \exists\, \widetilde{\varphi} \in \mathbb{R} : \cos\widetilde{\varphi} = \frac{x}{r} \\
+      (\sin\widetilde{\varphi})^2 = 1 - (cos\widetilde{\varphi})^2 = 1 - \frac{x^2}{r^2} = \frac{r^2 - x^2}{r^2} = \frac{y^2}{r^2} \\
+      \sin\widetilde{\varphi} = \pm\frac{y}{r}
+    \end{gather*}
+    Если $\sin\widetilde{\varphi} = \frac{y}{r}$, то $\varphi_0 := \widetilde{\varphi}$, иначе $\varphi_0 := -\widetilde{\varphi}$.
+
+    Итого получаем:
+    \begin{gather*}
+      \cos\varphi_0 = \frac{x}{r} \quad\quad \sin\varphi_0 = \frac{y}{r} \\
+      \Rightarrow z = x + iy = r\cos\varphi_0 + r\sin\varphi_0i = r(\cos\varphi_0 + i\sin\varphi_0) \Rightarrow \varphi_0 - arg\,z
+    \end{gather*}
+    Покажем, что $\varphi = \varphi_0 + 2\pi k$ тоже является аргументом:
+    \[ \varphi = \varphi_0 + 2\pi k \Leftrightarrow \cos\varphi = \cos\varphi_0,\, \sin\varphi = \sin\varphi_0 \Leftrightarrow \varphi - arg\,z \]
+    Покажем, что все аргументы имеют вид $\varphi_0 + 2\pi k$. Для этого рассмотрим $\alpha \neq (\varphi_0 + 2\pi k)$. 
+    Очевидно, что $\cos\alpha \neq \cos\varphi_0$ или $\sin\alpha \neq \sin\varphi_0$. Тогда $r * \cos\alpha \neq x$ или $r * \sin\alpha \neq y$. 
+    Следовательно $r(\cos\alpha + i\sin\alpha) \neq z$.
+  \end{proof}
+\end{enumerate}
+\underline{Свойства аргумента:}  
+
+$z_1,\, z_2 \in \mathbb{C}^*$($\mathbb{C}$ без нуля)
+\begin{enumerate}
+  \item $arg\,z_1z_2 = arg\,z_1 + arg\,z_2$
+  \begin{proof}
+    \begin{gather*}
+      z_1 \cdot z_2 = |z_1|(\cos\varphi_1 + i\sin\varphi_1) \cdot |z_2|(\cos\varphi_2 + i\sin\varphi_2) =  \\
+      = |z_1||z_2|(\cos\varphi_1\cos\varphi_2 - \sin\varphi_1\sin\varphi_2 + i(\cos\varphi_1\sin\varphi_2 + \sin\varphi_1\cos\varphi_2)) = \\
+      = |z_1||z_2|(\cos(\varphi_1 + \varphi_2) + i\sin(\varphi_1 + \varphi_2))
+    \end{gather*}
+  \end{proof}
+  \item $arg\,\frac{z_1}{z_2} = arg\,z_1 - arg\,z_2$
+  \begin{proof}  
+      \[ z_1 = \frac{z_1}{z_2} \cdot z_2 \Rightarrow arg\,z_1 = arg\,\frac{z_1}{z_2} + arg\,z_2 \Rightarrow arg\,\frac{z_1}{z_2} = arg\,z_1 - arg\,z_2 \]
+  \end{proof}
+  \begin{notice}
+    $arg\,\frac{1}{z} = arg\,1 - arg\,z = 0 - \arg\,z = -arg\,z$
+  \end{notice}
+  \item $arg\,\overline{z} = -arg\,z$
+  \begin{proof}
+    \begin{gather*}
+      arg\,z = \varphi \\
+      z = |z|(\cos\varphi + i\sin\varphi) \\
+      \overline{z} = |z|(\cos\varphi - i\sin\varphi) = |\overline{z}|(\cos(-\varphi) + i\sin(-\varphi)) \\
+      \Rightarrow arg\,\overline{z} = -arg\,z
+    \end{gather*}
+  \end{proof}
+\end{enumerate}
+
+\section{Умножение и деление чисел в тригонометрической форме. Формула Муавра.}
+\begin{itemize}
+  \item \textbf{Умножение} 
+  
+  $z_1,\, z_2 \in \mathbb{C}^*$
+  \[ z_1 \cdot z_2 = |z_1||z_2|(\cos(\varphi_1 + \varphi_2) + i\sin(\varphi_1 + \varphi_2)) \]
+  Доказательсво написано выше.
+  \item \textbf{Деление} 
+
+  $z_1,\, z_2 \in \mathbb{C}^*$
+  \begin{gather*}
+    \frac{z_1}{z_2} = \frac{|z_1|(\cos\varphi_1 + i\sin\varphi_1)}{|z_2|(\cos\varphi_2 + i\sin\varphi_2)} = \frac{|z_1|(\cos\varphi_1 + i\sin\varphi_1)(\cos\varphi_2 - i\sin\varphi_2)}{|z_2|(\cos\varphi_2 + i\sin\varphi_2)(\cos\varphi_2 - i\sin\varphi_2)} = \\
+    = \frac{|z_1|(\cos\varphi_1\cos\varphi_2 + \sin\varphi_1\sin\varphi_2 + i(\sin\varphi_1\cos\varphi_2 - \cos\varphi_1\sin\varphi_2))}{|z_2|(\cos\varphi_2^2 + \sin\varphi_2^2)} = \\
+    = \frac{|z_1|}{|z_2|}(\cos(\varphi_1 - \varphi_2) + i\sin(\varphi_1 - \varphi_2))
+  \end{gather*}
+  \item \textbf{Формула Муавра}
+  
+  Пусть $z \in \mathbb{C}^*,\; z = |z|(\cos\varphi + i\sin\varphi)$. 
+
+  Тогда для любого $n \in \mathbb{Z}$
+  \[ z^n = |z|^n(\cos(n\varphi) + i\sin(n\varphi)) \]
+  \begin{proof} \quad
+    \begin{itemize}
+      \item $n > 0$
+      
+      \underline{Индукция по $n$.}
+
+      База $n = 1$: очевидно
+
+      Переход $n = k - 1 \to n = k$
+      \begin{gather*}
+        z^k = z^{k-1} \cdot z = |z|^{k-1}(\cos(k - 1)\varphi + i\sin(k - 1)\varphi) \cdot |z|(\cos\varphi + i\sin\varphi) =  \\
+        = |z|^k(\cos k\varphi + i\sin k\varphi)    
+      \end{gather*}
+      \item $n = 0$
+      
+      \[ z^0 = |z|^0(\cos 0 + i\sin 0) = 1 \]
+      \item $n < 0$
+      \begin{gather*}
+        z^n = \frac{1}{z^{-n}} = \frac{1}{|z|^{-n}(\cos(-n\varphi) + i\sin(-n\varphi))} = \\
+        = \frac{1}{|z|^{-n}}(\cos(0 - (-n\varphi)) + i\sin(0 - (-n\varphi))) = |z|^n(\cos n\varphi + i\sin n\varphi)
+      \end{gather*}
+    \end{itemize}
+  \end{proof}
+  
+\end{itemize}
+
+
+
 \ifdefined\niveldos\else
 \end{document} 
 \fi
