@@ -1,1 +1,79 @@
 \section{Свойства степени многочлена}
+
+\begin{conj}
+Степенью многочлена $f$ называется максимальное $n$, для которого
+$a_n \neq 0$. Обозначается как $deg(f)$. \\
+При этом $a_n$ --- старший коэфициент, 
+а $a_nx^n$ --- старший член.
+\end{conj}
+\notice У нулевого многочлена степень равна $-\infty$ или $-1$ (соглашение).
+\begin{theorem-non}
+    Пусть $f,g \in R[x],\; deg(f) = m,\; deg(g) = n.$
+    \begin{enumerate}
+        \item $deg(f+g) \leqslant max(m,n)$ --- говорит о том,
+        что у противоположных по знакам старших коэфициентов
+        старший член может стать равен 0 и степень будет меньше.
+        Равенство достикается при $m \neq n$
+        \item $deg(f\cdot g) \leqslant m + n$
+    \end{enumerate}
+\end{theorem-non}
+
+\begin{proof}
+    Если один из многочленов равен нулю,
+    утверждения очевидны ($- \infty + smth = -\infty$).
+    Далее $n,m \geqslant 0$
+    \begin{enumerate}
+        \item Пусть $d = max(n,m)$, тогда 
+        $f$ и $g$ представим в виде $\sum_{i=0}^{d} {a_ix^i}$ и $\sum_{i=0}^{d} {b_ix^i}$.
+        \emph{Если у нас степень одного из многочленов меньше чем $d$, то мы можем дописать к нему в конце нулевые слагаемые, чтобы заканчивалось всё на $x^d$.} \\
+        $f + g = \sum_{i=0}^{d} {(a_i + b_i)x^i}$ и $deg(f+g) \leqslant d$ \\
+        Если $m\neq n$, то $a_d + b_d \neq 0$ (сложение нулевого и ненулевого элемента), тем самым $deg(f+g) = d$.
+        \item $f = \sum_{i=0}^{n} {a_i\cdot x^i},\; g = \sum_{j=0}^{m} {b_j\cdot x^j}$ \\
+        $f\cdot g = \sum_{i,j=0}^{n,m} {a_i\cdot b_j \cdot x^{i+j}}$ и $deg(f\cdot g) \leqslant m + n.$
+    \end{enumerate}
+\end{proof}
+
+\notice
+$deg(f\cdot g)$ может оказаться меньше, чем $deg(f + g)$, если в кольце $R$ есть делители нуля $(a_n\cdot b_m = 0)$. \\
+Это значит, что $R$ - не область целостности. \\
+Пример: $f = \bar{2}x + \bar{1}$ в кольце $\Z / 4\Z[x]$ \\
+$deg(f) = 1$ \\
+$deg(f\cdot f) = 0$, так как $(\bar{2}x + \bar{1})^2=\bar{1}$ \\
+$deg(f) + deg(f)= 1 + 1 = 2$ \\
+
+\begin{theorem-non}
+    Пусть $R$ - область целостности.
+    \begin{enumerate}
+        \item $\forall f,g \in R[x]: deg(f\cdot g) = deg(f + g)$
+        \item $R[x]$ --- область целостности.
+    \end{enumerate}
+\end{theorem-non}
+
+\begin{proof}
+    $ $
+    \begin{enumerate}
+        \item Пусть $m = deg(f),\; n = deg(g),\; a_m,\; b_n$ - соответствующие старшие коэфициенты. \\
+        Тогда в многочлене $fg$ коэфициент $a_m\cdot b_n \neq 0$ при $x^{m+n} \Rightarrow deg(f\cdot g) = m + n = deg(f) + deg(g)$    
+        \item Следует из первого: $f,g \neq 0 \Rightarrow deg(f\cdot g) = deg(f) + deg(g) \geqslant 0 + 0$
+    \end{enumerate}
+\end{proof}
+\follow \; Пусть $R$ - область целостности. Тогда $R[x]^* = R^*$
+\begin{proof}
+    $ $
+    \begin{itemize}
+        \item[$\subset$:] $R^* \subset R[x]^*$
+        \item[$\supset$:] $f \in R[x]^*,\; g \in R[x]$ \\
+        Тогда $f\cdot g = 1$ \\
+        $deg(f) + deg(g) = deg(fg) = 0$ $\Rightarrow deg(f) = deg(g) = 0 \quad (deg(f), deg(g) \geqslant 0)$ \\
+        Получается, что $f,g \in R$, ну а тогда $f \in R^*$ \\
+
+        Цитата из лекции, чтобы было проще понимать это доказательство: \\
+        "Если же теперь у вас есть обратимый многочлен, то у него \textbf{не} может быть степень больше нуля,
+        потому что когда вы будете на что-то его домножать, ненулевое, то степень при этом будет лишь
+        увеличиваться. Она будет оставаться такой же или увеличиваться и единицу вы не получите.
+        Значит остаётся рассматривать константы, а константы надо брать обратимые
+        (\emph{чтобы получить единицу - прим.})." 
+        \item[Пример:] $\Z[x]^* = \{ \pm 1 \}$. В то же время $\Z / 4\Z [x]^*$ --- бесконечное множество.
+    \end{itemize} 
+\end{proof}
+
