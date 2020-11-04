@@ -1,1 +1,51 @@
 \section{Делимость и ассоциированные элементы. Определение НОД}
+\begin{normalsize}
+    $R$ обозначает произвольное евклидово кольцо, $\nu$ - соответствующую евклидову норму
+    \begin{theorem-non}
+        Пусть есть $a, b \in R$
+        \begin{conj}
+            Элемент $x$ делит элемент $y \Longleftrightarrow \exists z: \; y = x \cdot z$ ($y$ лежит в главном идеале, порожденным элементом $x$)
+        \end{conj}
+        \begin{conj}
+            Элемент $d \in R$ называется наибольшим общим делителем $a$ и $b$, если \begin{itemize}
+                \item $d | a, d | b$
+                \item Если $\exists d' : d' | a, d' | b$, то $d' | d$
+            \end{itemize}
+        \end{conj}
+    \end{theorem-non}
+    \begin{theorem-non}
+        Пусть $R$ - область главных идеалов 
+
+        \begin{enumerate}
+            \item Если $a, b \in R$, то у $a$ и $b$ соответствует Н.О.Д.
+            \item Если $d$ - Н.О.Д. $a$ и $b$, то $d = am + bn$ для некоторых $m, n \in R$
+        \end{enumerate}
+        \begin{proof}
+            Можно считать, что хотя-бы один из элементов $a$ и $b$ отличен от $0$.
+            \begin{enumerate}
+                \item Положим $I = \{am + bn | m, n \in R\} = (a, b)$
+                
+                $I$ идеал в $R \Longrightarrow \exists d \in R : I = (d)$, так как $R$ - ОГИ  
+
+                $a, b \in I \Longrightarrow d | a, \; d | b$
+
+                $d \in I \Longrightarrow d = am + bn, m,n \in R$
+
+                Предположим $\begin{cases}
+                    d' | a \\
+                    d' | b
+                \end{cases} \Longrightarrow d' | (am + bn) \Longrightarrow d' | d$
+
+                \item Пусть $D$ - еще какой-либо НОД $a, b$ 
+
+                $d | a, \; d|b \Longrightarrow d | D \Longrightarrow D$ лежит в идеале, порожденном $d$, а это то же самое, что $I \Longrightarrow D = am' + bn'$ 
+            \end{enumerate}
+        \end{proof}
+    \end{theorem-non}
+        \begin{conj}
+            Элементы $a, b \in R$ назыываются ассоциированными, если $a|b$ и $b|a$
+        \end{conj}
+        \textbf{Лемма.}
+        \textit{Пусть $d$ - НОД $a$ и $b$, и $d'$ - элемент $R$. \\
+        Тогда $d'$ тоже НОД $a$ и $b \Longleftrightarrow d'$ ассоциирован с $d$}
+\end{normalsize}
