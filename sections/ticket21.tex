@@ -19,4 +19,23 @@
         \textbf{Лемма.}
         \textit{Пусть $d$ - НОД $a$ и $b$, и $d'$ - элемент $R$. \\
         Тогда $d'$ тоже НОД $a$ и $b \Longleftrightarrow d'$ ассоциирован с $d$}
+
+        \textbf{Лемма.} 
+        \textit{
+            Пусть $R$ - область целостности, $a, b$ - ее элементы. $a$ ассоциирован с $b \Longleftrightarrow b = a \cdot \varepsilon$, 
+            где $\varepsilon$ - обратимый элемент 
+        } 
+        \begin{proof} \quad \\
+            ``$\Longleftarrow$'': Если $\underbrace{b = a \cdot \varepsilon}_{a | b} \Longrightarrow \underbrace{a = b \cdot \varepsilon^{-1}}_{b | a}$ 
+
+            ``$\Longrightarrow$'': $a$ ассоциирован с $b \Longrightarrow a$ и $b$ являются кратными. $b = a \cdot \varepsilon, \varepsilon \in R \\
+            a = b \cdot \varepsilon', \varepsilon' \in R$. Подставим одно равенство в другое и получим 
+            \begin{gather*}
+                a = a\varepsilon\varepsilon' \\
+                a(\varepsilon\varepsilon' - 1) = 0
+            \end{gather*}
+            Если $a \neq 0$, так как $R$ - ОЦ, то $\varepsilon\varepsilon' = 1 \Longrightarrow \varepsilon$ обратим 
+            
+            Если $a = 0$, то и $b = 0$, тогда в качестве $\varepsilon$ можно просто взять 1
+        \end{proof}
 \end{normalsize}
