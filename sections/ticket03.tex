@@ -1,1 +1,37 @@
 \section{Алгебраические операции, их свойства}
+\begin{conj}
+    Операция $*$(или$\cdot$) на $M$ называется коммутативной, если $\forall m_1, m_2 \in M : m_1\cdot m_2 = m_2\cdot m_1$
+\end{conj}
+\begin{conj}
+    Операция $\cdot$ на $M$ называется ассоциативной, если $\forall m_1, m_2, m_3 \in M: (m_1\cdot m_2)\cdot m_3 = m_1\cdot(m_2\cdot m_3)$
+\end{conj}
+\begin{theorem}
+Значение не зависит от расстановки скобок
+\end{theorem}
+\begin{proof}
+Индукция $k \to k+1$
+
+База: $k=3$, обычная ассоциативность
+
+Переход: $B = (\ )\cdot(\ ) \overset{\text{ИП}}{=} (a_1a_2...a_l)(a_{l+1}...a_k) = (a_1a_2...a_l)((a_{l+1}...a_{k-1})a_k) = (a_1a_2...a_{k-1})a_k = a_1a_2...a_k$
+\end{proof}
+\begin{conj}
+    $g \in M,\ n \in \mathbb{N}$ $g^n=\overbrace{g*g*g*...*g}^n$
+\end{conj}
+
+\begin{conj}
+    $e \in M$ называется левым нейтральным, если $\forall m \in M: e\cdot m = m$, правым нейтральным, если $\forall m \in M: m\cdot e = m$, нейтральным, если является левым и правым нейтральным
+\end{conj}
+\begin{theorem-non}
+    Существует не более одного нейтрального элемента. $e' = e'e'' = e''$
+\end{theorem-non}
+\begin{conj}
+    $a \in M$. Элемент $b \in M$ называется обратимым к $a$, если $ab = ba = e$ (также можно разделять левый и правый обратный
+\end{conj}
+\begin{conj}
+    $m^n = \begin{cases}
+    m\cdot m\cdot ...\cdot m,\ n>0\\
+    e,\ n=0\\
+    m^{-1}\cdot ... \cdot m^{-1},\ n<0
+    \end{cases}$
+\end{conj}

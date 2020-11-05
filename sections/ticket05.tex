@@ -1,1 +1,27 @@
 \section{Примеры групп. Произведение групп. Изоморфизм групп}
+Примеры:
+\begin{itemize}
+\item[] 1. ($\mathbb{Z}, +$)
+\item[] 2. ($\mathbb{Z}\times \mathbb{Z} \to Z$) : $(m, n) \to (m+n+1)$. $e=1, n^{-1}=n-2$
+\item[] 3. $(\mathbb{Z}, \cdot)$
+\item[] 4. $\{\pm 1\, \cdot \}$
+\end{itemize}
+
+Пример $G$ - группа перемещений плоскости.
+
+$G = \{f: P \to P | \forall A, B \in P : \rho (f(A), f(B)) = \rho(A, B)\}$
+
+$\Sigma(\Phi) = \{g \in G | g(\Phi) = \Phi\}$ - я не понял, но кто понял, молодец
+
+\begin{conj}
+    Пусть $(G_1, *), (G_2, \diamond)$ - группы. Их прямым произведением называется
+    
+    $(G_1\times G_2, \otimes)$
+    
+    $(g_1, g_2)\otimes (g_1', g_2') = (g_1*g_1', g_2\diamond g_2')$
+\end{conj}
+\begin{conj}
+    Изоморфизм между $G$ и $G'$ - отображение $\varphi : G \to G'$, т. ч
+        1) $\varphi$ - биекция
+        2) $\forall g_1, g_2 \in G : \varphi (g_1\cdot  g_2) = \varphi (g_1)\cdot \varphi(g_2)$
+\end{conj}
