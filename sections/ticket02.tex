@@ -1,1 +1,28 @@
+% !TEX root = ../LinalColloc01.tex
+
 \section{Отображения. Инъективность. Сюръективность. Биективность}
+Отображения, инъективность, сюръективность
+\begin{conj} 
+    $f: M \to N$ - отображение. Соответствие между      элементами двух множеств. $f(m)$ - образ под действием $m$
+\end{conj}
+\begin{conj}
+    $f: M \to N$ инъективно, если $\forall m_1, m_2 \in M : m_1\neq m_2 \Rightarrow f(m_1)\neq f(m_2)$
+\end{conj}
+\begin{conj}
+    $f: M \to N$ сюръективно, если $\forall n \in N\ \exists m \in M : f(m) = n$
+\end{conj}
+\begin{conj}
+    $f: M \to N$ биективно, если оно инъективно и сюръективно
+\end{conj}
+\begin{conj}
+    Пусть $n\in N, f: M\to N$. Тогда 
+    
+    $f^{-1}(n) = \{m \in M \mid f(m)=n\}$ - полный прообраз элемента
+\end{conj}
+\begin{itemize}
+    \item[] $f$ инъективно $\Leftrightarrow \forall n \in N : |f^{-1}(n)|\leq 1$
+    
+    \item[] $f$ сюръективно $\Leftrightarrow \forall n \in N : |f^{-1}(n)| \geq 1$
+    
+    \item[] $f$ биективно $\Leftrightarrow \forall n \in N : |f^{-1}(n)| = 1$
+\end{itemize}
