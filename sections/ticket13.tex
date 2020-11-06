@@ -4,7 +4,7 @@
   Пусть $ z \in\mathbb{C},\  n \in\mathbb{N}$
   \begin{itemize}
     \item[1.] Если $z=0$, то уравнение $w^n=z$ имеет единственный корень 0.
-    \item[2.] Если $z=r(\cos(\phi)+i\sin(\phi)), r>0$, то уравнение $w^n=z$ имеет ровно $n$ корней, а именно  $w_0, w_1, \dots, w_{n-1}$, где $w_k=\sqrt[n]{r}(\cos(\frac{\phi + 2\pi k}{n}) + i\sin(\frac{\phi + 2\pi k}{n})),\  k=0, 1, \dots, n-1$
+    \item[2.] Если $z=r(\cos(\varphi)+i\sin(\varphi)), r>0$, то уравнение $w^n=z$ имеет ровно $n$ корней, а именно  $w_0, w_1, \dots, w_{n-1}$, где $w_k=\sqrt[n]{r}(\cos(\frac{\varphi + 2\pi k}{n}) + i\sin(\frac{\varphi + 2\pi k}{n})),\  k=0, 1, \dots, n-1$
   \end{itemize}
 
   \begin{proof}
@@ -13,20 +13,20 @@
     $w:=\rho(\cos(\psi) + i\sin(\psi)), \ \rho > 0,\ \psi \in \mathbb{R}$ \\
     $w^n = z \Longrightarrow \begin{cases}
       \rho^n=r \\
-      n\psi = \phi+2\pi k,\ k\in\mathbb{Z}
+      n\psi = \varphi+2\pi k,\ k\in\mathbb{Z}
     \end{cases}
     \Longrightarrow \begin{cases}
       \rho=\sqrt[n]{r} \\ 
-      \psi=\frac{\phi + 2\pi k}{n}\ ($для некоторого $ k\in \mathbb{Z})
+      \psi=\frac{\varphi + 2\pi k}{n}\ ($для некоторого $ k\in \mathbb{Z})
     \end{cases}$ \\ 
 
-    На этом этапе задача решена с одной оговоркой. Нужно понять, какие значения $\phi$ дают разные корни. \\
+    На этом этапе задача решена с одной оговоркой. Нужно понять, какие значения $\varphi$ дают разные корни. \\
 
-    $w_k := \sqrt[n]{r}(\cos(\frac{\phi + 2\pi k}{n}) + i\sin(\frac{\phi + 2\pi k}{n})) $ \\
+    $w_k := \sqrt[n]{r}(\cos(\frac{\varphi + 2\pi k}{n}) + i\sin(\frac{\varphi + 2\pi k}{n})) $ \\
 
     Среди этих $w_k$ могут встречаться одинаковые числа. Мы должны выяснить, какие из них будут одинаковыми. На самом деле предъявлены все корни ($\{w_k\ |\ k\in \mathbb{Z}\}$), но мы даже не знаем мощность множества корней. Поймем, когда два таких корня равны: \\
     
-    $w_k \stackrel{?}{=} w_l \Leftrightarrow \frac{\phi + 2\pi k}{n} = \frac{\phi + 2\pi l}{n} + 2\pi s, s\in\mathbb{Z} \Leftrightarrow \frac{k}{n} = \frac{l}{n} + s, s\in\mathbb{Z} \Leftrightarrow k-l \in n\mathbb{Z} (k \equiv l \mod n)$ \\ 
+    $w_k \stackrel{?}{=} w_l \Leftrightarrow \frac{\varphi + 2\pi k}{n} = \frac{\varphi + 2\pi l}{n} + 2\pi s, s\in\mathbb{Z} \Leftrightarrow \frac{k}{n} = \frac{l}{n} + s, s\in\mathbb{Z} \Leftrightarrow k-l \in n\mathbb{Z} (k \equiv l \mod n)$ \\ 
 
     То есть числа разные, если $k$ и $l$ имеют разный остаток при делении на $n$. Выходит, если мы хотим получить список всех (разных!) корней, то мы должны просто взять в качестве значений $k$ максимальный набор чисел, имеющих разный остаток при делении на $n$. \\
 
