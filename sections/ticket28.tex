@@ -1,1 +1,63 @@
+% !TEX root = ../LinalColloc01.tex
+
+\begin{normalsize}
 \section{Производная многочлена, ее свойства}
+
+\begin{conj} Пусть $f \in R[X]$.
+    \[f = a_n X^n + a_{n-1} X^{n - 1} + \dots + a_1 X + a_0\]
+    Его (формальной) производной называется многочлен
+    \[f' = n a_n X^{n-1} + (n - 1) a_{n-1} X^{n-2} + \dots + a_1\]
+\end{conj}
+
+\begin{theorem-non}
+    Пусть $f, g \in R[X]$. Тогда
+\begin{enumerate}
+    \item $(f + g)' = f' + g'$
+    \item $(fg)' = f'g + fg'$
+    \item Если $n \in \mathbb{N}$, то $(f^n)' = n f^{n-1} f'$
+\end{enumerate}
+\end{theorem-non}
+\begin{proof} $ $
+
+    \begin{enumerate}
+        \item Это свойство очевидно из определения производной.
+        \item Проверим второе свойство сначала для мономов.\\
+        Пусть $f = a X^n$, $g = b X^m$. Тогда
+        \begin{eqnarray*}
+            (fg)' &=& (abX^{n+m})' = \\
+            &=& ab(n + m)X^{n + m - 1} = \\
+            &=& abnX^{n + m - 1} + abmX^{n + m - 1} = \\
+            &=& naX^{n-1}bX^m + aX^nmbX^{m-1} = \\
+            &=& f'g + fg'
+        \end{eqnarray*}
+        Далее, пусть $f$ -- моном, а $g = g_0 + g_1 + \dots + g_m$,
+        где $g_i$ -- моном. Тогда
+        \begin{eqnarray*}
+            (fg)' &=& (\sum_{i = 0}^m fg_i)' = \\
+            &=& \sum_{i = 0}^m(fg_i)' = \\
+            &=& \sum_{i = 0}^m(f'g_i + fg_i') = \\
+            &=& \sum_{i = 0}^m f'g_i + \sum_{i = 0}^m fg_i' = \\
+            &=& f' \sum_{i = 0}^m g_i + f \sum_{i = 0}^m g_i' = \\
+            &=& f' (\sum_{i = 0}^m g_i) + f (\sum_{i = 0}^m g_i)' = \\
+            &=& f' g + f g'
+        \end{eqnarray*}
+        Наконец, для произвольных $f$ и $g$, пусть 
+        $f = f_0 + f_1 + \dots + f_n$, где $f_i$ -- мономы. Тогда
+        для них доказывается это свойство тем же рассуждением.
+
+        \item Применим индукцию по $n$. Для $n = 1$, очевидно, 
+        выполняется. Переход:
+        \[(f^n)' = (f^{n-1}f)' = (f^{n-1})'f + f^{n-1}f'\]
+        Тогда, по индукционному предположению:
+        \begin{align*}
+            &(f^{n-1})'f + f^{n-1}f' = (n - 1)f^{n-2}f'f + f^{n-1}f' = \\
+            &= (n - 1)f^{n-1}f' + f^{n-1}f' =
+            (n - 1 + 1)f^{n-1}f' = nf^{n-1}f'
+        \end{align*}
+    \end{enumerate}
+
+\end{proof}
+
+
+
+\end{normalsize}

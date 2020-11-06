@@ -1,1 +1,80 @@
+% !TEX root = ../LinalColloc01.tex
+
+\begin{normalsize}
 \section{Кратные корни и производная}
+
+\begin{theorem-non}
+    Пусть $K$ -- поле, $f \in K[X]$, $f \neq 0$, $a \in K$.
+    Тогда $a$ -- кратный корень $f$, если и только если 
+    $f(a) = f'(a) = 0$.
+\end{theorem-non}
+\begin{proof} $ $
+
+    ``$\Longrightarrow$'':
+
+    Пусть $a$ -- кратный корень. Тогда $f = (X - a)^2 h$, где $h$ --
+    некоторый многочлен. Тогда $f(a) = 0$, $f' = ((X - a)^2 h)' =
+    ((X - a)^2)' h + (X - a)^2 h' = 2(X - a) h + (X - a)^2 h' = 
+    (X - a) \cdot (2h + (X - a) h')$. Ну и видно, что $f'(a) = 0$.
+
+    ``$\Longleftarrow$'':
+
+    Пусть $f(a) = f'(a) = 0$. Тогда $f = (X - a)g$. $f' = ((X - a)g)' =
+    (X - a)'g + (X - a)g' = g + (X - a)g'$. Тогда из $f'(a) = 0$
+    следует, что $g(a) = 0$. Получается, что $(X - a) \mid g$, и
+    $(X - a)^2 \mid f$. 
+\end{proof}
+
+\follow$ $
+    Пусть $K$ -- поле, $f \in K[X]$, $f \neq 0$, $a \in K$. Обозначим
+    через $D$ наибольший общий делитель $f$ и $f'$. Тогда $a$ --
+    кратный корень $f$, если и только если $D(a) = 0$.
+
+\begin{proof}
+    \begin{eqnarray*}
+        a \text{ -- кратный корень } &\Longleftrightarrow&
+        f(a) = f'(a) = 0 \\
+        &\Longleftrightarrow& (X - a) \mid f \text{ и } (X - a) \mid f' \\
+        &\Longleftrightarrow& (X - a) \mid D \\
+        &\Longleftrightarrow& D(a) = 0
+    \end{eqnarray*}
+\end{proof}
+
+\begin{conj}
+    Характеристика кольца с 1.
+    Если в этом кольце $K$ не существует $n : \underbrace{1 + 1 + 
+    \dots + 1}_n = 0$, тогда $\operatorname{char} K = 0$, иначе 
+    $\operatorname{char} K = \min \{n \mid \underbrace{1 + 1 + \dots + 1
+    }_n = 0\}$.
+\end{conj}
+
+\notice В поле характеристика может быть только либо нулём, либо
+простым числом.
+
+\textbf{Пример.}
+
+$\operatorname{char} \mathbb{Z} = 0$,
+$\operatorname{char} \mathbb{Z}/m\mathbb{Z} = m$
+
+\begin{theorem-non}
+    Пусть $K$ -- поле нулевой характеристики. $f \in K[X]$, $a \in K$
+    -- корень $f$ кратности $s \geqslant 2$. Тогда $a$ -- корень $f'$
+    кратности в точности $s - 1$.
+\end{theorem-non}
+\begin{proof} $ $
+
+    Положим $f = (X - a)^s g$. Тогда $(X - a) \nmid g$, и $g(a) \neq 0$.
+    Имеем
+    \begin{gather*}
+        f' = \left( (X - a)^s g \right)' = \left( (X - a)^s \right)' g
+        + (X - a)^s g' = s(X - a)^{s - 1} + (X - a)^s g' =
+        (X - a)^{s - 1} h
+    \end{gather*}
+    где $h = sg + (X - a)g'$. При этом $h(a) = sg(a) \neq 0$ (здесь
+    мы пользуемся тем, что $\operatorname{char} K = 0$). Следовательно,
+    $(X - a) \nmid h$, из чего следует, что $a$ -- корень $f'$ кратности
+    ровно $s - 1$.
+
+\end{proof}
+
+\end{normalsize}

@@ -1,1 +1,37 @@
+% !TEX root = ../LinalColloc01.tex
+
+\begin{normalsize}
 \section{Кратные корни, сумма кратностей корней многочлена}
+
+Вспомним, что по теореме Безу $f(a) = 0 \Leftrightarrow (x - a) \mid f$.
+
+\begin{conj}
+Пусть $f \in R[X]$, $f \neq 0$, $a \in R$ -- корень $f$. Его 
+\textit{кратностью} называется наибольшее $n$, т.ч. $(X - a)^n \mid f$.
+\end{conj}
+\begin{conj}
+Корень кратности 1 называется \textit{простым}, корень кратности 2
+-- \textit{двойным}, кратности 3 -- \textit{тройным}... Корень кратности
+$\geqslant$ 2 называется \textit{кратным корнем}.
+\end{conj}
+\begin{theorem-non}
+Пусть $R$ -- поле, $f \in R[X]$, $d = \deg f \neq 0$; $a_1, \dots, a_s$
+-- все его корни; $n_1, \dots, n_s$ -- их кратности. Тогда
+\[n_1 + \dots + n_s \leqslant d\]
+\end{theorem-non}
+\begin{proof}
+Т.к. многочлены степени 1 неприводимы, мы можем записать каноническое
+разложение многочлена:
+\begin{align*}
+    & a = \varepsilon (X - a_1)^{n_1}(X - a_2)^{n_2}\dots(X - a_s)^{n_s}g
+    \Longrightarrow \\
+    &\Longrightarrow d = \deg (X - a_1)^{n_1} + \deg (X - a_2)^{n_2} +
+    \dots + \deg (X - a_s)^{n_s} + \deg g = \\
+    & = n_1 + n_2 + ... n_3 + \deg g \geqslant n_1 + n_2 + \dots + n_s
+\end{align*}
+
+$d$ в точности равно написанному выше выражению, т.к. поле является
+областью целостности (обратимый элемент не может быть делителем нуля).
+\end{proof}
+
+\end{normalsize}
