@@ -1,1 +1,47 @@
 \section{Построение поля комплексных чисел}
+\begin{itemize}
+    \item $\mathbb{C} = \{a + bi\,|\, a, b \in \mathbb{R} \} \quad i^2 = -1$ 
+    \item Определим операцию сложения: $(a + bi) + (a' + b'i) = (a + a') + (b + b')i$
+    \item Определеим операцию умножения: $(a + bi) \cdot (a' + b'i) = (aa' - bb') + (ab' + a'b)i$ 
+\end{itemize} 
+\begin{theorem-non}
+    $(\mathbb{C}, +, \cdot)$ - поле
+\end{theorem-non}
+\begin{proof} \quad \\
+    \begin{itemize}
+        \item коммутативность и ассоциативность сложения очевидны
+        \item $0 + 0i$ - нейтральный по сложению
+        \item $(-a) + (-b)i$ - противоположный к $a + bi$
+        \item коммутативность умножения очевидна
+        \item дистрибутивность умножения:
+        \begin{gather*}
+            (a + bi)((a_1 + b_1i) + (a_2 + b_2i)) = (a + bi)((a_1 + a_2) + (b_1 + b_2)i) = \\
+            = a(a_1 + b_1) - b(b_1 + b_2) + (a(b_1 + b_2) + b(a_1 + a_2))i \\ \\
+            (a + bi)(a_1 + b_1i) + (a + bi)(a_2 + b_2i) = (aa_1 - bb_1 + aa_2 - bb_2) + (ab_1 + a_1b + ab_2 + a_2b)i = \\
+            = a(a_1 + b_1) - b(b_1 + b_2) + (a(b_1 + b_2) + b(a_1 + a_2))i
+        \end{gather*}
+        \item ассоциативность умножения:
+        \begin{gather*}
+            (a_1 + b_1i)((a_2 + b_2i)(a_3 + b_3i)) = (a_1 + b_1i)((a_2a_3 - b_2b_3) + (a_2b_3 + a_3b_2)i) = \\
+            = a_1(a_2a_3 - b_2b_3) - b_1(a_2b_3 + a_3b_2) + (a_1(a_2b_3 + a_3b_2) + b_1(a_2a_3 - b_2b_3))i = \\
+            = a_1a_2a_3 - a_3b_1b_2 - a_1b_2b_3 - a_2b_1b_3 + (a_1a_2b_3 + a_1a_3b_2 + a_2a_3b_1 - b_1b_2b_3)i  \\ \\
+            ((a_1 + b_1i)(a_2 + b_2i))(a_3 + b_3i) = ((a_1a_2 - b_1b_2) + (a_1b_2 + a_2b_1)i)(a_3 + b_3i) = \\
+            = (a_1a_2 - b_1b_2)a_3 - (a_1b_2 + a_2b_1)b_3 + ((a_1a_2 - b_1b_2)b_3 + (a_1b_2 + a_2b_1)a_3)i = \\
+            = a_1a_2a_3 - a_3b_1b_2 - a_1b_2b_3 - a_2b_1b_3 + (a_1a_2b_3 + a_1a_3b_2 + a_2a_3b_1 - b_1b_2b_3)i
+        \end{gather*}
+        \item $(1 + 0i)$ - нейтральный элемент по умножению 
+        \item $(a + bi)^{-1} = \frac{a}{a^2 + b^2} - \frac{b}{a^2 + b^2}i$
+        \begin{gather*}
+            (a + bi)(a - bi) = a^2 - b^2i^2 = a^2 + b^2 \quad  /(a^2 + b^2) \\
+            (a + bi)(\frac{a}{a^2 + b^2} - \frac{b}{a^2 + b^2}i) = 1
+        \end{gather*}
+    \end{itemize}
+    $\Rightarrow$ все аксиомы поля выполнены $\Rightarrow \mathbb{C}$ - поле комплексных чисел 
+\end{proof}
+\begin{itemize}
+    \item $\mathbb{R}$ это подполе в $\mathbb{C}$ 
+    \item $z = x + iy,\; x, y \in \mathbb{R}$ \\
+    $x = Re\,z$ - вещественная часть \\
+    $y = Im\,z$ - мнимая часть
+    \item $z$ называется чисто мнимым, если $Re\,z = 0$
+\end{itemize}

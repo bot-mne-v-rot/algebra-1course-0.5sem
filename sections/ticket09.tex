@@ -1,1 +1,24 @@
 \section{Комплексное сопряжение}
+$a - bi$ - число, комплексно сопряженное к $a + bi$
+\begin{theorem-non}
+    Отображение $\mathbb{C} \to \mathbb{C} : z = x + iy \mapsto \overline{z} = x - yi$ - автоморфизм $\mathbb{C}$, \\
+    то есть это биекция, а также $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$ и $\overline{z_1z_2} = \overline{z_1} \cdot \overline{z_2}$
+\end{theorem-non}
+\begin{proof}
+    \begin{enumerate}
+    \item $\overline{\overline{x}} = x \Rightarrow$ комплексное сопряжение - отображение, обратное к самому себе $\Rightarrow$ это биекция
+    \item  $z_1 = x_1 + iy_1,\; z_2 = x_2 + iy_2$ 
+    
+    $\overline{z_1 + z_2} = (x_1 + x_2) - (y_1 + y_2)i = (x_1 - y_1i) + (x_2 - y_2i) = \overline{z_1} + \overline{z_2}$
+    \item $\overline{z_1z_2} = (x_1x_2 - y_1y_2) - (x_1y_2 + x_2y_1)i$
+    
+    $\overline{z_1} \cdot \overline{z_2} = (x_1 - y_1i)(x_2 - y_2i) = (x_1x_2 - y_1y_2) - (x_1y_2 + x_2y_1)i$
+    \end{enumerate}
+\end{proof}
+\begin{notice}
+    \begin{enumerate}
+    \item $z = \overline{z} \Leftrightarrow z \in \mathbb{R}$
+    \item $z + \overline{z} \in \mathbb{R}$
+    \item $z \cdot \overline{z} \in \mathbb{R}$
+    \end{enumerate}
+\end{notice}

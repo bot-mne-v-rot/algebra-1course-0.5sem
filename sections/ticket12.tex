@@ -1,1 +1,45 @@
 \section{Умножение и деление чисел в тригонометрической форме. Формула Муавра}
+\begin{itemize}
+    \item \textbf{Умножение} 
+  
+    $z_1,\, z_2 \in \mathbb{C}^*$
+    \[ z_1 \cdot z_2 = |z_1||z_2|(\cos(\varphi_1 + \varphi_2) + i\sin(\varphi_1 + \varphi_2)) \]
+    Доказательсво написано выше.
+    \item \textbf{Деление} 
+
+    $z_1,\, z_2 \in \mathbb{C}^*$
+    \begin{gather*}
+        \frac{z_1}{z_2} = \frac{|z_1|(\cos\varphi_1 + i\sin\varphi_1)}{|z_2|(\cos\varphi_2 + i\sin\varphi_2)} = \frac{|z_1|(\cos\varphi_1 + i\sin\varphi_1)(\cos\varphi_2 - i\sin\varphi_2)}{|z_2|(\cos\varphi_2 + i\sin\varphi_2)(\cos\varphi_2 - i\sin\varphi_2)} = \\
+        = \frac{|z_1|(\cos\varphi_1\cos\varphi_2 + \sin\varphi_1\sin\varphi_2 + i(\sin\varphi_1\cos\varphi_2 - \cos\varphi_1\sin\varphi_2))}{|z_2|(\cos\varphi_2^2 + \sin\varphi_2^2)} = \\
+        = \frac{|z_1|}{|z_2|}(\cos(\varphi_1 - \varphi_2) + i\sin(\varphi_1 - \varphi_2))
+    \end{gather*}
+    \item \textbf{Формула Муавра}
+  
+    Пусть $z \in \mathbb{C}^*,\; z = |z|(\cos\varphi + i\sin\varphi)$. 
+
+    Тогда для любого $n \in \mathbb{Z}$
+    \[ z^n = |z|^n(\cos(n\varphi) + i\sin(n\varphi)) \]
+    \begin{proof} \quad
+        \begin{itemize}
+            \item $n > 0$
+      
+            \underline{Индукция по $n$.}
+
+            База $n = 1$: очевидно
+
+            Переход $n = k - 1 \to n = k$
+            \begin{gather*}
+                z^k = z^{k-1} \cdot z = |z|^{k-1}(\cos(k - 1)\varphi + i\sin(k - 1)\varphi) \cdot |z|(\cos\varphi + i\sin\varphi) =  \\
+                = |z|^k(\cos k\varphi + i\sin k\varphi)    
+            \end{gather*}
+            \item $n = 0$
+      
+            \[ z^0 = |z|^0(\cos 0 + i\sin 0) = 1 \]
+            \item $n < 0$
+            \begin{gather*}
+                z^n = \frac{1}{z^{-n}} = \frac{1}{|z|^{-n}(\cos(-n\varphi) + i\sin(-n\varphi))} = \\
+                = \frac{1}{|z|^{-n}}(\cos(0 - (-n\varphi)) + i\sin(0 - (-n\varphi))) = |z|^n(\cos n\varphi + i\sin n\varphi)
+            \end{gather*}
+        \end{itemize}
+    \end{proof}
+\end{itemize}
