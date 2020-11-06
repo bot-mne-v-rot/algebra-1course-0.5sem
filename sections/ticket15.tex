@@ -1,1 +1,60 @@
 \section{Многочлены от одной переменной, переход к стандартной записи}
+\begin{normalsize}
+$R$ --- коммутативное ассоциативное кольцо с 1.
+
+\begin{conj} 
+    Многочленом от одной переменной над R называется финитная 
+    последовательность $a_0, a_1,\dots$ элементов R, то есть 
+    такая, что, $a_j \; \forall j \geqslant 0$ 
+    при некотором $N \geqslant 0$ 
+\end{conj}
+
+$R[x]$ - множество всех многочленов от 1 переменной из $R$
+
+
+
+\begin{theorem-non} Операции в R[x] \end{theorem-non}
+    \begin{itemize}
+        \item[] $+:$ $(a_0,a_1,\dots) + (b_0, b_1,\dots) = (a_0 + b_0, a_1 + b_1, \dots)$ --- финитная последовательность
+        \item[] $\cdot:$ $(a_0,a_1,\dots) + (b_0, b_1,\dots) = (c_0, c+1, \dots)$, где $c_n = \sum_{k=0}^{n} a_k \cdot b_{n-k}$  
+    \end{itemize}
+\notice 
+$(c_0, c+1, \dots)$ --- финитная последовательность.
+Если $a_j = 0$ при $j \geqslant N_1,\;b_j$ при $N \geqslant N_2$,
+то $c_j = 0$ при $j \geqslant N_1 + N_2$
+
+Переход к стандартной записи.
+\begin{itemize}
+    \item[] $[a] := (a, 0, 0, \dots)$
+    \item[] $[a] + [b] = [a+b]$
+    \item[] $[a] \cdot [b] = [a\cdot b]$  
+    \item[] $[a] \equiv a$
+    \item[] $a \cdot (b_0, b_1, \dots) = (a\cdot b_0, a\cdot b_1, \dots)$
+    \item[] $(a_0, a_1, \dots, a_n, 0, \dots) = \sum_{i=0}^{n} {(0,\dots,0,a_i,0,\dots)} = \sum_{i=0}^{n} {a_ix_i},\;$ где $x_i = (0,0,\dots,0,1,0,\dots)$ на $i$-том месте стоит 1.
+    \item[] Получили вид: $a_0x_0 + a_1x_1 + \dots + a_nx_n$
+    \item[] Заметим, что $x_k\cdot x_1 = x_{k+1}$ $\xRightarrow[\text{}]{\text{по индукции}}$ Каждое $x_k = x_1^k$
+    \item[] Получили вид: $a_0 + a_1x_1 + a_2x_1^2 + \dots + a_nx_1^n$
+    \item[] $x_1:=x$
+    \item[] $a_0 + a_1x + \dots + a_nx^n$ 
+\end{itemize}
+
+\begin{theorem-non} $(R[x], +, \cdot)$ - коммутативное ассоциативное кольцо с 1 \end{theorem-non}
+\begin{proof} 
+    $ $
+    \begin{enumerate}
+        \item Четыре свойства сложения очевидны
+        \item Коммутативность умножения очевидна
+        \item Дистрибутивность следует из определения умножения: $c_n = \sum_{k=0}^{n} a_k \cdot b_{n-k}$, подставить $b_{n-k} = b'_{n-k} + b''_{n-k}$
+        \item Ассоциативность: $(ab)c = a(bc)$ \\
+        $a = \sum_{i=0}^{n} {a_ix^i},\;$ где $a_i \in R$ \\
+        $b = \sum_{j=0}^{m} {a_jx^j},\;$ где $b_j \in R$ \\
+        $c = \sum_{k=0}^{l} {a_kx^k},\;$ где $c_k \in R$ \\
+        $(ab)c = 
+        \sum_{i,j,k=0}^{n,m,l} {((a_ix^i)(b_jx^j))(c_kx^k)} =
+        \sum_{i,j,k=0}^{n,m,l} {a_ib_jc_k((x^ix^j)(x^k))} =
+        \sum_{i,j,k=0}^{n,m,l} {a_ib_jc_kx^{i+j+k}} = 
+        a(bc)$
+        \item Нейральный элемент по умножению --- 1.
+    \end{enumerate}
+\end{proof}
+\end{normalsize}
