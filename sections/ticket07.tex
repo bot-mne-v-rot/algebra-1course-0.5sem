@@ -1,1 +1,51 @@
 \section{Поле}
+\begin{conj}
+    Коммутативное, ассоциативное кольцо с 1 $A$ называется полем, если
+    \[ A^* = A\, \backslash\, \{ 0 \} \]
+    Например, $\mathbb{Q},\, \mathbb{R}$ или $\mathbb{F}_2$ - кольцо классов вычетов по модулю 2 (вообще подойдет любой простой модуль).
+\end{conj}
+\begin{notice}
+    $A = \{ 0 \}$ является кольцом, но не является полем, так как 0 в данном случае обратим.
+\end{notice}
+\begin{theorem-non}
+    Пусть $A$ - коммутативное, ассоциативное кольцо с 1. Тогда $A$ - поле $\Leftrightarrow$ в $A$ ровно 2 идеала.
+\end{theorem-non}
+\begin{proof} \quad 
+  
+    $\{ 0 \}$ и $A$ всегда является идеалами. Надо доказать, что не найдется других идеалов.
+  
+    Будем считать, что $A \neq \{ 0 \}$. 
+  
+    $"\Longrightarrow":$ Пусть $A$ - поле, $I$ - идеал $A$ отличный от $\{ 0 \}$. 
+    
+    Тогда $\exists\, a \neq 0 \in I \Rightarrow a \in A^* \Rightarrow \exists\, a' : \underbrace{a}_{\in I}a' = \underbrace{1}_{\Rightarrow  1 \in I}$
+    
+    $1 \in I \Rightarrow \forall b \in A \quad b \cdot \underbrace{1}_{\in I} = \underbrace{b}_{\Rightarrow b \in I} \Rightarrow I = A$
+  
+    $"\Longleftarrow":$ Пусть $a \in A\, \backslash \, \{ 0 \} $. Надо доказать, что $a \in A^*$.
+  
+    Рассмотрим главный идеал, порожденный $a: \quad (a) = \{ a \cdot x\, |\, x \in A \} $:
+  
+    $(a) \neq \{  0 \} \Rightarrow (a) = A \Rightarrow 1 \in (a) \Rightarrow \\\\
+    \Rightarrow \exists \, b \in A : 1 = a \cdot b \Rightarrow a' = b \Rightarrow a \in A^*$
+\end{proof}
+\vspace{0.7cm}
+  
+\textbf{Еще один пример поля:} $\mathbb{Q}(\sqrt{2}) = \{ a + b\sqrt{2} \, | \, a, \, b \in \mathbb{Q} \} $ - квадратичное поле.
+\begin{proof} \quad
+  
+    Проверим, что $\mathbb{Q}(\sqrt{2})$ - подкольцо в $\mathbb{R}$:
+    \begin{itemize}
+        \item Аддитивная подгруппа - очевидно 
+        \item Замкнутость относительно умножения:
+        \[ (a + b\sqrt{2})(a' + b'\sqrt{2}) = \underbrace{(aa' + 2bb')}_{\in \mathbb{Q}} + \underbrace{(ab' + a'b)}_{\in \mathbb{Q}}\sqrt{2} \] 
+    \end{itemize}
+    Очевидно, что $1 \in \mathbb{Q}(\sqrt{2})$
+  
+    Проверим, что $\mathbb{Q}(\sqrt{2})^* = \mathbb{Q}(\sqrt{2}) \, \backslash \, \{ 0 \}$:
+    \begin{gather*}
+        (a + b\sqrt{2})(a - b\sqrt{2}) = a^2 - 2b^2 (\neq 0)\in \mathbb{Q} \\
+        (a + b\sqrt{2})^{-1} = \frac{a}{a^2 - 2b^2} - \frac{b}{a^2 - 2b^2}\sqrt{2} \in \mathbb{Q}(\sqrt{2})
+    \end{gather*}
+    $\Rightarrow \mathbb{Q}(\sqrt{2})$ - поле.
+\end{proof}
