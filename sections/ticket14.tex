@@ -22,6 +22,32 @@
 
   \begin{proof}
     Умножим всю сумма на $\zeta_1:=cos(\frac{2\pi}{n} + i\sin(\frac{2\pi}{n}))$: \\ 
-    $\zeta_1S=\zeta_1*w_0 + \zeta_1*w_1 + \dots + \zeta_1*w_{n-1} = w_1 + w_2 + \dots + w_0$
+    $\zeta_1S=\zeta_1*w_0 + \zeta_1*w_1 + \dots + \zeta_1*w_{n-1} = w_1 + w_2 + \dots + w_0=s$ \\
+    $(\zeta_1-1)s = 0$, следовательно $s=0$, потому что $\zeta_1 \neq 1$, так как $n>1$. \\
+    Стоит отметить, что можно было воспользоваться формулой геометрической прогрессии.
   \end{proof} 
+
+  \begin{theorem-non}
+    $\mu_n = \{ \zeta\in\mathbb{C} | \zeta^n = 1 \}$ – группа по умножению или подгруппа $\mathbb{C}^*$.
+  \end{theorem-non}
+  \begin{proof}
+    Действительно, такое множество непусто. Произведение двух элементов будет элементов множества: 
+    $\zeta^n = \tilde{\zeta}^n = 1 \Leftrightarrow (\zeta\tilde{\zeta})^n = 1$ \\
+    Если $\zeta^n=1$, то обратный к нему $(\zeta^{-1})^n=1$ \\
+
+    Таким образом, $\mu_n$ – подгруппа $\mathbb{C}^*$.
+  \end{proof}
+
+  \begin{conj}
+    Группа $G$ называется циклческой, если $\exists g\in G: \\ 
+    G=\{ g^k | g\in\mathbb{Z} \}$, то есть $G$ состоит из степеней $g$. \\
+    Кратко это записывают так:
+    $G=<g>$ \\
+    Например: $\mathbb{Z}=<1>$ по операции сложения, то есть $1^2 = 1+1 =2$.
+
+  \end{conj}
+
+  \notice – $\mu_n$ – циклическая группа: \\
+  $\mu_n = <\zeta_1>$ = $<\zeta_{n-1}>$
+
 \end{normalsize}
