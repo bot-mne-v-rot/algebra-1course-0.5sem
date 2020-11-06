@@ -27,6 +27,8 @@
 \usepackage{blindtext}
 \usepackage{todonotes}
 \usepackage{import}
+\usepackage{hyphsubst}
+\usepackage{bookmark}
 
 \graphicspath{ {./images/} }
 %%
@@ -170,35 +172,6 @@
 \newcommand\calloutup[3][1.5pt]{%
   \def\stacktype{L}\stackMath\stackunder[#1]{#2}{\callouttextup{#3}}%
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                %
-%                                %
-%              Title             %
-%                                %
-%                                %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Конспект лекций по математическому анализу
-
-СПбГУ, МКН, 1 курс
-\ \\
-\ \\ \ \\
-} 
-
-
-%\thanks{Авторы: %\href{https://github.com/maxmartynov08}{maxmart%ynov08}, \href{https://github.com/K-dizzled}{K-%dizzled}, \href{https://github.com/SmnTin}{SmnT%in}, \href{https://github.com/muldrik}{muldrik}%}} 
-\author{Лектор: Храбров Александр Игоревич \\
-\ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\
-\ \\ 
-\begin{flushright}
-Составили: Андрей \href{https://github.com/K-dizzled}{K-dizzled} Козырев \\ Никита  \href{https://github.com/muldrik}{muldrik} Митцев \\ Максим \href{https://github.com/maxmartynov08}{maxmartynov08} Мартынов \\ Семен \href{https://github.com/SmnTin}{SmnTin} Паненков
-\end{flushright}
-\ \\
-\ \\
-\ \\
-\ \\
-\ \\
-\ \\}
-\date{осень 2020}
 \begin{document}
 
 \clearpage
@@ -225,7 +198,13 @@
 \nbvspace[1]
 \\
 \Large СОСТАВИТЕЛИ:\\[0.5em]
-\footnotesize АНДРЕЙ \href{https://github.com/K-dizzled}{K-dizzled} КОЗЫРЕВ, НИКИТА  \href{https://github.com/muldrik}{muldrik} МИТЦЕВ \\ МАКСИМ \href{https://github.com/maxmartynov08}{maxmartynov08} МАРТЫНОВ, СЕМЕН \href{https://github.com/SmnTin}{SmnTin} ПАНЕНКОВ
+\footnotesize 
+Андрей \href{https://github.com/K-dizzled}{K-dizzled} Козырев, 
+Никита  \href{https://github.com/muldrik}{muldrik} Митцев,
+Максим \href{https://github.com/maxmartynov08}{maxmartynov08} Мартынов,\\ 
+Семён \href{https://github.com/SmnTin}{SmnTin} Паненков,
+Марк \href{https://github.com/markprudnikov}{markprudnikov} Прудников,
+Арсений \href{https://github.com/ElectFreak}{ElectFreak} Юсуфов
 
 \nbvspace[2]
 
@@ -258,8 +237,6 @@
 \newpage
 \begin{normalsize}
 \chapter*{Первый семестр. Первая четверть}
-\import{sections/}{ticket00.tex}
-$ $
 \import{sections/}{ticket01.tex}
 $ $
 \import{sections/}{ticket02.tex}
@@ -323,6 +300,4 @@ $ $
 \import{sections/}{ticket31.tex}
 $ $
 \end{normalsize}
-\ifdefined\niveldos\else
 \end{document} 
-\fi
