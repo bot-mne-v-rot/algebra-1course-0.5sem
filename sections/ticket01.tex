@@ -11,6 +11,13 @@ $\mathbb{N} = \{1, 2, 3, \dots\} \\
 \mathbb{Z, Q} = \{{{m}\over{n}} : m \in \mathbb{Z}, n \in\mathbb{N}\} \\
 \mathbb{R}$ - вещественные числа \\
 $\mathbb{C}$ - комплексные числа \\
+\begin{conj} Операции над множествами \end{conj}
+\begin{itemize}
+    \item $A \cup B = \{x: x \in A $ или $ x \in B\}$
+    \item $A \cap B = \{x: x \in A, x  \in B\}$
+    \item $A \; \setminus \; B = \{x: x \in A, x  \notin B\}$
+    \item $A \bigtriangleup B = (A \; \setminus \; B) \cup (B \; \setminus \; A)$
+\end{itemize}
 \begin{theorem-non} Правила Де Моргана \end{theorem-non}
     \begin{itemize}
         \item[] $A \; \setminus \; (\bigcup\limits_{\alpha \in I} B_{\alpha}) 
@@ -33,13 +40,6 @@ $\mathbb{C}$ - комплексные числа \\
     \Longleftrightarrow x \in A \; \setminus \; B_{\alpha}$ при всех $\alpha \in I
     \Longleftrightarrow x \in \bigcap\limits_{\alpha \in I}(A \setminus B_{\alpha})$ 
 \end{proof}
-\begin{theorem-non} Операции над множествами \end{theorem-non}
-\begin{itemize}
-    \item $A \cup B = \{x: x \in A $ или $ x \in B\}$
-    \item $A \cap B = \{x: x \in A, x  \in B\}$
-    \item $A \; \setminus \; B = \{x: x \in A, x  \notin B\}$
-    \item $A \bigtriangleup B = (A \; \setminus \; B) \cup (B \; \setminus \; A)$
-\end{itemize}
 \notice - $\bigtriangleup, \cup, \cap$ - комммутативны, ассоциативны
 \begin{conj} 
     Декартово произведение множеств 
@@ -54,6 +54,7 @@ $\mathbb{C}$ - комплексные числа \\
         \bigcap\limits_{\alpha \in I}(A \cup B_{\alpha}) $
     \end{itemize}
 \begin{proof}
+    Докажем для первой формулы. Вторая доказывается аналогично. \\
         $x \in A \cap \bigcup\limits_{\alpha \in I} B_{\alpha}
         \Longleftrightarrow \begin{cases}
             x \in A \\

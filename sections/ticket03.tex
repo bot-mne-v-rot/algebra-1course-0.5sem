@@ -18,6 +18,77 @@ $g\circ f: M \to P$
 
 $(g\circ f)(m) = g(f(m))$
 \end{conj}
+
+$ $\\
+\framebox[1.02\width]{Необязательный для запоминания факт, просто
+он был в ДЗ. Мало ли, спросят}
+\begin{theorem-non}
+    Пусть $f: X \rightarrow Y$.
+    \begin{enumerate}
+        \item $f$ - инъекция $\Leftrightarrow f$ - обратимая слева, т.е.
+        $\exists g : Y \rightarrow X \mid g \circ f = \operatorname{id}_X$
+        \item $f$ - сюръекция $\Leftrightarrow f$ - обратимая справа, т.е.
+        $\exists g : Y \rightarrow X \mid f \circ g = \operatorname{id}_Y$
+    \end{enumerate}
+\end{theorem-non}
+\begin{proof} $ $
+\begin{enumerate}
+    \item 
+    ``$\Longleftarrow$'':
+    
+    Пусть $g : Y \rightarrow X$ - левая обратная к $f$,
+    тогда $g \circ f = \operatorname{id}_X$
+    
+    Возьмём $x$ и $x' \in X$. Предположим, что $f(x) = f(x')$,
+    тогда:
+    \[ x = \operatorname{id}_X(x) = g(f(x)) = g(f(x')) = 
+    \operatorname{id}_X(x') = x' \]
+    
+    Таким образом, $f(x) = f(x') \Rightarrow x = x'$, 
+    значит $f$ - инъекция.
+    
+    ``$\Longrightarrow$'':
+    
+    Пусть $f$ - инъекция. Возьмём $x' \in X$.
+    
+    Определим $g : Y \rightarrow X$ следующим образом:
+    
+    \[ g(y) = \begin{cases}
+        x, & \mbox{если } y = f(x) \mbox{ для некоторого } x \\
+        x', & \mbox{если } y \notin \operatorname{range}(f) 
+    \end{cases} \]
+    
+    Тогда $(g \circ f)(x) = g(f(x)) = x \,\,\, \forall x \in X
+    \Rightarrow g \circ x = \operatorname{id}_X \Rightarrow g$ - 
+    левая обратная к $f$.
+    
+    \item 
+    ``$\Longleftarrow$'':
+    
+    Пусть $g : Y \rightarrow X$ - правая обратная к $f$,
+    тогда $f \circ g = \operatorname{id}_Y$
+    
+    Возьмём $y \in Y$.
+    \[ y = \operatorname{id}_Y(y) = f(g(y)) \]
+    Таким образом, любой $y \in Y$ является образом $x = g(y)
+    \Rightarrow f$ - сюръекция.
+    
+    ``$\Longrightarrow$'':
+    
+    Пусть $f$ - сюръекция $\Leftrightarrow \operatorname{range}(f) = Y$
+    
+    Определим $g : Y \rightarrow X$
+    
+    \[ g(y) = \mbox{некоторому } x : f(x) = y \]
+    
+    Тогда $\forall y \in Y \, y = f(g(y)) = \operatorname{id}_Y(y) 
+    \Rightarrow
+    (f \circ g) = \operatorname{id}_Y \Rightarrow g$ - 
+    правая обратная к $f$.
+
+\end{enumerate}
+\end{proof}    
+
 \begin{conj}
     Операция $*$(или$\cdot$) на $M$ называется коммутативной, если $\forall m_1, m_2 \in M : m_1\cdot m_2 = m_2\cdot m_1$
 \end{conj}
@@ -25,14 +96,19 @@ $(g\circ f)(m) = g(f(m))$
     Операция $\cdot$ на $M$ называется ассоциативной, если $\forall m_1, m_2, m_3 \in M: (m_1\cdot m_2)\cdot m_3 = m_1\cdot(m_2\cdot m_3)$
 \end{conj}
 \begin{theorem-non}
-Значение не зависит от расстановки скобок
+Общая ассоциативность. Если операция ассоциативна, то 
+значение не зависит от расстановки скобок.
 \end{theorem-non}
 \begin{proof}
-Индукция $k \to k+1$
+Индукция по $k$
 
 База: $k=3$, обычная ассоциативность
 
-Переход: $B = (\ )\cdot(\ ) \overset{\text{ИП}}{=} (a_1a_2...a_l)(a_{l+1}...a_k) = (a_1a_2...a_l)((a_{l+1}...a_{k-1})a_k) = (a_1a_2...a_{k-1})a_k = a_1a_2...a_k$
+Переход $\{1..(k-1)\} \to k$: \\
+$B = (\ )\cdot(\ ) \overset{\text{ИП}}{=} (a_1a_2...a_l)(a_{l+1}...a_k) 
+= (a_1a_2...a_l)((a_{l+1}...a_{k-1})a_k) = 
+((a_1a_2...a_l)(a_{l+1}...a_{k-1}))a_k \overset{\text{ИП}}{=}
+(a_1a_2...a_{k-1})a_k = a_1a_2...a_k$
 \end{proof}
 \begin{conj}
     $g \in M,\ n \in \mathbb{N}$ $g^n=\overbrace{g*g*g*...*g}^n$
@@ -42,12 +118,18 @@ $(g\circ f)(m) = g(f(m))$
     $e \in M$ называется левым нейтральным, если $\forall m \in M: e\cdot m = m$, правым нейтральным, если $\forall m \in M: m\cdot e = m$, нейтральным, если является левым и правым нейтральным
 \end{conj}
 \begin{theorem-non}
-    Существует не более одного нейтрального элемента. $e' = e'e'' = e''$
+    Существует не более одного нейтрального элемента.
 \end{theorem-non}
+\begin{proof}
+    Пусть $e'$ и $e''$ -- нейтральные элементы.
+    Тогда $e' = e'e'' = e''$
+\end{proof}
 \begin{conj}
-    $a \in M$. Элемент $b \in M$ называется обратимым к $a$, если $ab = ba = e$ (также можно разделять левый и правый обратный
+    $a \in M$. Элемент $b \in M$ называется обратным к $a$, если $ab = ba = e$ (также можно разделять левый и правый обратный).
+    Для обратного используется следующая запись: $a^{-1} = b$.
 \end{conj}
 \begin{conj}
+    $m \in M$, $n \in \mathbb{Z}$. Тогда
     $m^n = \begin{cases}
     m\cdot m\cdot ...\cdot m,\ n>0\\
     e,\ n=0\\

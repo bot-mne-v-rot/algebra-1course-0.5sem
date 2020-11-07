@@ -1,38 +1,41 @@
+% !TEX root = ../LinalColloc01.tex
+
 \section{Кольцо. Примеры. Группа обратимых элементов}
 \begin{conj}
-    Кольцо - множество $A$, на котором заданы две бинарные операции $+$ и $\cdot$ (называемые сложение и умножение), для которых выполняется следующее:
+    Кольцо -- множество $A$, на котором заданы две бинарные операции $+$ и $\cdot$ (называемые сложение и умножение), для которых выполняется следующее:
 \end{conj}
 \begin{enumerate}
-    \item $(A, +)$ - абелева группа 
-    \item $\forall a,\, b,\, c \in A \quad \begin{cases} a \cdot (b + c) = a \cdot b + a \cdot c \\  (b + c) \cdot a = b \cdot a + c \cdot a \end{cases}$ - дистрибутивность
+    \item $(A, +)$ -- абелева группа 
+    \item $\forall a,\, b,\, c \in A \quad \begin{cases} a \cdot (b + c) = a \cdot b + a \cdot c \\  (b + c) \cdot a = b \cdot a + c \cdot a \end{cases}$ -- дистрибутивность
 \end{enumerate}
 \begin{notice}
-    Ассоциативность умножения также зачастаю относят к базовым свойствам, но мы выделяем это как дополнительное.
+    Ассоциативность умножения также зачастую относят к базовым свойствам, но мы выделяем это как дополнительное.
 \end{notice}
   
 $A$ называется
     \begin{itemize}
         \item ассоциативным кольцом, если умножение ассоциативно
         \item коммутативным кольцом, если умножение коммутативно
-        \item кольцом с 1, если в $A$ существует нейтральный элемент относительно умножения
+        \item кольцом с $1$, если в $A$ существует нейтральный элемент относительно умножения\\
+        (при этом $1 \neq 0$, где $0$ -- нейтральный элемент по сложению)
     \end{itemize}
   
 \textbf{Примеры:}
 \begin{enumerate}
-    \item $(\mathbb{Z}, +, \cdot)$ - коммутативное, ассоциативное кольцо с 1 
-    \item $(2\mathbb{Z}, +, \cdot)$ - коммутативное, ассоциативное кольцо без 1
-    \item $(\mathbb{R}^3, +, \cdot$(вектрное умножение)) - не коммутативное, не ассоциативное кольцо без 1
-    \item Пусть $M$ - множество. Тогда $(2^M, \otimes, \cap)$ - коммутативное, ассоциативное кольцо с 1 
+    \item $(\mathbb{Z}, +, \cdot)$ -- коммутативное, ассоциативное кольцо с 1 
+    \item $(2\mathbb{Z}, +, \cdot)$ -- коммутативное, ассоциативное кольцо без 1
+    \item $(\mathbb{R}^3, +, \times $ (векторное умножение)) -- некоммутативное, неассоциативное кольцо без 1
+    \item Пусть $M$ - множество. Тогда $(2^M, \bigtriangleup, \cap)$ -- коммутативное, ассоциативное кольцо с 1 
     \begin{gather*}
-        A \otimes B = B \otimes A \quad\quad (A \otimes B) \otimes C = A \otimes (B \otimes C) \\
+        A \bigtriangleup B = B \bigtriangleup A \quad\quad (A \bigtriangleup B) \bigtriangleup C = A \bigtriangleup (B \bigtriangleup C) \\
         0 = \varnothing \\
-        A \otimes A = \varnothing \\
-        A  \cap (B \otimes C) = (A \cap B) \otimes (A \cap C) \\
+        A \bigtriangleup A = \varnothing \\
+        A  \cap (B \bigtriangleup C) = (A \cap B) \bigtriangleup (A \cap C) \\
         A \cap B = B \cap A \quad\quad A \cap (B \cap C) = (A \cap B) \cap C \\
         1 = M
     \end{gather*}
 \end{enumerate}
-\textbf{Лемма.} Пусть $A$ - кольцо, тогда $\forall a \in A \quad 0 \cdot a = 0$
+\textbf{Лемма.} Пусть $A$ -- кольцо, тогда $\forall a \in A \quad 0 \cdot a = 0$
 \begin{proof}
     \begin{gather*}
         0 + 0 = 0 \\
@@ -43,7 +46,7 @@ $A$ называется
     \end{gather*}
 \end{proof}
 \begin{conj}
-    Пусть $(A, +, \cdot)$ - кольцо. Тогда $B \subset A$ называется подкольцом $A$, если 
+    Пусть $(A, +, \cdot)$ -- кольцо. Тогда $B \subset A$ называется подкольцом $A$, если 
     \begin{itemize}
         \item $B$ замкнуто относительно умножения 
         \item $B$ является аддитивной подгруппой $A$
@@ -54,11 +57,11 @@ $A$ называется
 \begin{conj}
     Подмножество $I \subset A$ называется идеалом кольца $A$, если 
     \begin{itemize}
-        \item $A$ - коммутативное, ассоциативное кольцо с 1 
-        \item $I$ - аддитивная подгруппа $A$ 
+        \item $A$ -- коммутативное, ассоциативное кольцо с 1 
+        \item $I$ -- аддитивная подгруппа $A$ 
         \item $\forall a \in A,\; \forall b \in I \quad a \cdot b \in I$
     \end{itemize}
-    Например, $2\mathbb{Z}$ - идеал кольца  $\mathbb{Z}$.
+    Например, $2\mathbb{Z}$ -- идеал кольца  $\mathbb{Z}$.
 \end{conj}
 \begin{notice} 
   
@@ -66,23 +69,23 @@ $A$ называется
     $A$ всегдя является идеалом в $A$
 \end{notice}
 \begin{conj}
-    Пусть $A$ - коммутативное, ассоциативное кольцо с 1. Тогда идеал $I$ называется главным идеалом кольца $A$, если 
-    \[ \exists\, a \in A : I = \{ a \cdot x \, | \, x \in A \} \] 
+    Пусть $A$ -- коммутативное, ассоциативное кольцо с 1. Тогда идеал $I$ называется главным идеалом кольца $A$, если 
+    \[ \exists\, a \in A : I = aA = \{ a \cdot x \mid x \in A \} \] 
 \end{conj}
 \vspace{0.7cm}
   
 \begin{conj}
-    Пусть $A$ - ассоциативное кольцо с 1. Тогда $A^*$ - множество обратимых элементов $A$.
+    Пусть $A$ -- ассоциативное кольцо с 1. Тогда $A^*$ -- множество обратимых элементов $A$.
   
     Например, $\mathbb{Z}^* = \{ \pm1 \},\; \mathbb{Q}^* = \mathbb{Q}\, \backslash\, \{ 0 \}$
 \end{conj}
 \begin{theorem-non}
-    $(A^*, \cdot)$ - группа обратимых элементов.
+    $(A^*, \cdot)$ -- группа обратимых элементов.
 \end{theorem-non}
 \begin{proof} \quad
     \begin{itemize}
         \item Ассоциативность есть, так как она есть в $A$ 
-        \item 1 есть, так как $1 \cdot 1 = 1$
+        \item 1 есть, так как она обратима: $1 \cdot 1 = 1$
         \item Все элементы обратимы
         \item Замкнутость относительно умножения:
         \begin{gather*}
@@ -90,7 +93,7 @@ $A$ называется
             \exists\, a' \in A^* : aa' = a'a = 1 \\
             \exists\, b' \in A^* : bb' = b'b = 1 \\
             (ab)(b'a') = a(bb')a' = aa' = 1 \\
-            \Rightarrow (ba)' = b'a' \Rightarrow ab \in A^*   
+            \Rightarrow (ba)^{-1} = b'a' \Rightarrow ab \in A^*   
         \end{gather*}
     \end{itemize}
 \end{proof}

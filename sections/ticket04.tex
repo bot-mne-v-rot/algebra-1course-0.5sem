@@ -1,3 +1,5 @@
+% !TEX root = ../LinalColloc01.tex
+
 \section{Группы. Подгруппы. Сокращение в группе}
 \begin{conj}
     Группа - множество $G$ с заданной на нем бинарной операцией $\cdot$, такой что
@@ -8,8 +10,11 @@
     \end{itemize}
 \end{conj}
 
+$ $\\
+\framebox[1.02\width]{В предыдущем билете есть доказательство этого
+предложения}
+\begin{theorem-non} $ $
 
-\begin{theorem-non}
 $f: M \to N$ и у $f$ есть левое обратное ($g: N \to M, g \circ f = id_M$) $\Leftrightarrow f$ - инъективно
 
 $f: M \to N$ и у $f$ есть правое обратное ($g: N \to M, f\circ g = id_M$) $\Leftrightarrow f$ - сюръективно
@@ -23,14 +28,18 @@ $f: M \to N$ и у $f$ есть правое обратное ($g: N \to M, f\ci
 \end{conj}
 Недогруппы:
 \begin{itemize}
-    \item[] Если операция только ассоциативна, то множество с этой операцией - полугруппа
-    \item[] Если выполняется ассоциативность и есть нейтральный элемент, то множество с операцией - моноид
+    \item Если операция только ассоциативна, то множество с этой операцией - полугруппа.\\
+    Например, $(\mathbb{N}, +)$
+    \item Если выполняется ассоциативность и есть нейтральный элемент, то множество с операцией - моноид.
+    Например, $(\mathbb{N} \cup \{0\}, +)$
 \end{itemize}
 \begin{conj}
     $(G, \cdot)$ - группа. $H \subset G$ называется подгруппой, если
     \begin{itemize}
-    \item[] 1. $H\cdot H \subset H$
+    \item[] 1. $H\cdot H \subset H$, 
+    т.е. $\forall a, b \in H \,\, a \cdot b \in H$
     \item[] 2. $e \in H$
-    \item[] 3. $H^{-1} \subset H$
+    \item[] 3. $H^{-1} \subset H$,
+    т.е. $\forall a \in H \,\, a^{-1} \in H$
     \end{itemize}
 \end{conj}

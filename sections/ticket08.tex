@@ -1,3 +1,5 @@
+% !TEX root = ../LinalColloc01.tex
+
 \section{Построение поля комплексных чисел}
 \begin{itemize}
     \item $\mathbb{C} = \{a + bi\,|\, a, b \in \mathbb{R} \} \quad i^2 = -1$ 
@@ -16,9 +18,9 @@
         \item дистрибутивность умножения:
         \begin{gather*}
             (a + bi)((a_1 + b_1i) + (a_2 + b_2i)) = (a + bi)((a_1 + a_2) + (b_1 + b_2)i) = \\
-            = a(a_1 + b_1) - b(b_1 + b_2) + (a(b_1 + b_2) + b(a_1 + a_2))i \\ \\
+            = a(a_1 + a_2) - b(b_1 + b_2) + (a(b_1 + b_2) + b(a_1 + a_2))i \\ \\
             (a + bi)(a_1 + b_1i) + (a + bi)(a_2 + b_2i) = (aa_1 - bb_1 + aa_2 - bb_2) + (ab_1 + a_1b + ab_2 + a_2b)i = \\
-            = a(a_1 + b_1) - b(b_1 + b_2) + (a(b_1 + b_2) + b(a_1 + a_2))i
+            = a(a_1 + a_2) - b(b_1 + b_2) + (a(b_1 + b_2) + b(a_1 + a_2))i
         \end{gather*}
         \item ассоциативность умножения:
         \begin{gather*}
@@ -41,7 +43,7 @@
 \begin{itemize}
     \item $\mathbb{R}$ это подполе в $\mathbb{C}$ 
     \item $z = x + iy,\; x, y \in \mathbb{R}$ \\
-    $x = Re\,z$ - вещественная часть \\
-    $y = Im\,z$ - мнимая часть
-    \item $z$ называется чисто мнимым, если $Re\,z = 0$
+    $x = \operatorname{Re}\,z$ - вещественная часть \\
+    $y = \operatorname{Im}\,z$ - мнимая часть
+    \item $z$ называется чисто мнимым, если $\operatorname{Re}\,z = 0$
 \end{itemize}
